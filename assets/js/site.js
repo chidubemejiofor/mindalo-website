@@ -81,7 +81,7 @@
     if (!main) return [];
     var out = [];
     main.querySelectorAll("h1, h2, h3, p, li").forEach(function (el) {
-      if (el.closest("[data-no-read]")) return;
+      if (el.closest("[data-no-read], .crumbs")) return;
       if (el.matches("li") && el.querySelector("p, h3")) return; // read the parts instead
       if (el.offsetParent === null && getComputedStyle(el).position !== "fixed") return; // hidden on this screen
       var t = el.innerText.replace(/\s+/g, " ").trim();
