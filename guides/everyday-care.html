@@ -20,58 +20,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&amp;display=swap">
-  <link rel="stylesheet" href="../assets/css/site.css">
-  <script src="../assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/site.css?v=2">
+  <script src="../assets/js/site.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="tools" role="region" aria-label="Reading tools">
-    <div class="wrap">
-      <div class="tools-group" role="group" aria-label="Text size">
-        <span class="tools-label" aria-hidden="true">Text size</span>
-        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
-        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
-        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
-      </div>
-      <div class="tools-right">
-        <button class="tool-btn" type="button" id="listen" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen to this page</span></button>
-        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
-      </div>
-    </div>
-  </div>
-
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-row">
       <a class="brand" href="../index.html" aria-label="Mindalo home">
         <img src="../assets/mindalo-mark.svg" alt="" width="64" height="64">
         <span><span class="wordmark" aria-hidden="true">m<span class="i">ı</span>ndalo</span><span class="brand-tag">Diagnosis · Support · Education</span></span>
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../guides.html" aria-current="page">Guides for carers</a></li>
-          <li><a href="../training.html">Training</a></li>
-          <li><a href="../about.html">About us</a></li>
+            <li><a href="../index.html"><span>Home</span></a></li>
+            <li><a href="../guides.html" aria-current="page"><span>Guides<span class="nav-extra"> for carers</span></span></a></li>
+            <li><a href="../training.html"><span>Training</span></a></li>
+            <li><a href="../about.html"><span>About<span class="nav-extra"> us</span></span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div class="tools" role="region" aria-label="Reading tools">
+    <div class="wrap">
+      <div class="tools-group" role="group" aria-label="Text size">
+        <span class="tools-label" aria-hidden="true">Text<span class="extra"> size</span></span>
+        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
+        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
+        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
+      </div>
+      <div class="tools-right">
+        <button class="tool-btn" type="button" id="listen" aria-pressed="false" aria-label="Listen to this page" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen<span class="extra"> to this page</span></span></button>
+        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
+      </div>
+    </div>
+  </div>
+
   <main id="main" tabindex="-1">
     <div class="wrap">
-<nav class="crumbs" aria-label="You are here"><ol><li><a href="../index.html">Home</a></li><li><a href="../guides.html">Guides for carers</a></li><li><span aria-current="page">Everyday care at home</span></li></ol></nav>
+      <nav class="crumbs" aria-label="You are here"><ol><li><a href="../index.html">Home</a></li><li><a href="../guides.html">Guides for carers</a></li><li><span aria-current="page">Everyday care at home</span></li></ol></nav>
       <article class="article">
-        <p class="eyebrow">Guide for carers</p>
+        <p class="eyebrow">Guide 4 of 5 · Support</p>
         <h1>Everyday care at home</h1>
         <p class="meta">About 6 minutes to read · Last checked September 2026</p>
         <section class="key-points" aria-labelledby="kp-title">
           <h2 id="kp-title">The main points</h2>
           <ul>
-          <li>Speak slowly and calmly, and give the person time to answer.</li>
-          <li>A regular daily routine helps the person feel safe.</li>
-          <li>Make sure they eat well and drink enough water.</li>
-          <li>Changes in behaviour often have a cause, such as pain, hunger or needing the toilet.</li>
+            <li>Speak slowly and calmly, and give the person time to answer.</li>
+            <li>A regular daily routine helps the person feel safe.</li>
+            <li>Make sure they eat well and drink enough water.</li>
+            <li>Changes in behaviour often have a cause, such as pain, hunger or needing the toilet.</li>
           </ul>
         </section>
         <h2>Talking together</h2>
@@ -109,24 +109,24 @@
         </ul>
 
         <h2>When behaviour changes</h2>
-        <p>A person with dementia may become upset, restless or angry. This is not their fault. Often something is wrong that they cannot explain. Check if they are:</p>
+        <p>A person with dementia may become upset, restless or angry. This is not their fault. Often something is wrong that they cannot put into words. Check if they are:</p>
         <ul>
           <li>in pain, hungry, thirsty or tired</li>
           <li>needing the toilet</li>
           <li>too hot or too cold</li>
           <li>scared by noise, crowds or a strange place</li>
         </ul>
-        <p>Stay calm, speak gently, and try a change of activity or a quiet place.</p>
+        <p>Once you find the cause, you can often ease the distress. Stay calm and speak gently. A calm voice helps the person feel safe, even if they do not follow the words. If that does not help, try a change of activity or a quieter place.</p>
         <div class="callout" role="note">
-          <p class="callout-title">Get medical help if</p>
-          <p>the person suddenly becomes much more confused, very sleepy, or unwell. This can be a sign of an infection or other illness that needs treatment.</p>
+          <p class="callout-title">Get medical help</p>
+          <p>Sudden changes need medical help. Get help if the person suddenly becomes much more confused, very sleepy or unwell. These changes can be a sign of an infection or another illness. Quick treatment can help the person recover.</p>
         </div>
 
-        <p class="disclaimer">This guide gives general information. It does not replace advice from a doctor, nurse or health worker who knows the person.</p>
+        <p class="disclaimer">This guide gives general information about dementia. It is not medical advice for any one person. A doctor, nurse or health worker who knows the person can give advice that fits them. Please speak to them about any worries.</p>
         <nav class="next-guide" aria-label="Next guide">
-          <p class="muted small">Next guide</p>
+          <p class="muted small">Next step 5 of 5</p>
           <p><a href="caring-for-yourself.html"><strong>Looking after yourself as a carer</strong></a></p>
-          <p class="small"><a href="../guides.html">See all guides</a></p>
+          <p class="small"><a href="../guides.html">See all guides in order</a></p>
         </nav>
       </article>
 
@@ -142,9 +142,9 @@
       <div>
         <h2>Guides for carers</h2>
         <ul>
-            <li><a href="../guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="../guides/signs-of-dementia.html">Signs of dementia</a></li>
             <li><a href="../guides/getting-a-diagnosis.html">Getting checked by a health worker</a></li>
+            <li><a href="../guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="../guides/everyday-care.html">Everyday care at home</a></li>
             <li><a href="../guides/caring-for-yourself.html">Looking after yourself as a carer</a></li>
         </ul>

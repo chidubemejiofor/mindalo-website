@@ -20,63 +20,83 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script src="assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <script src="assets/js/site.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="tools" role="region" aria-label="Reading tools">
-    <div class="wrap">
-      <div class="tools-group" role="group" aria-label="Text size">
-        <span class="tools-label" aria-hidden="true">Text size</span>
-        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
-        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
-        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
-      </div>
-      <div class="tools-right">
-        <button class="tool-btn" type="button" id="listen" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen to this page</span></button>
-        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
-      </div>
-    </div>
-  </div>
-
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-row">
       <a class="brand" href="index.html" aria-label="Mindalo home">
         <img src="assets/mindalo-mark.svg" alt="" width="64" height="64">
         <span><span class="wordmark" aria-hidden="true">m<span class="i">ı</span>ndalo</span><span class="brand-tag">Diagnosis · Support · Education</span></span>
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="guides.html">Guides for carers</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="about.html" aria-current="page">About us</a></li>
+            <li><a href="index.html"><span>Home</span></a></li>
+            <li><a href="guides.html"><span>Guides<span class="nav-extra"> for carers</span></span></a></li>
+            <li><a href="training.html"><span>Training</span></a></li>
+            <li><a href="about.html" aria-current="page"><span>About<span class="nav-extra"> us</span></span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div class="tools" role="region" aria-label="Reading tools">
+    <div class="wrap">
+      <div class="tools-group" role="group" aria-label="Text size">
+        <span class="tools-label" aria-hidden="true">Text<span class="extra"> size</span></span>
+        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
+        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
+        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
+      </div>
+      <div class="tools-right">
+        <button class="tool-btn" type="button" id="listen" aria-pressed="false" aria-label="Listen to this page" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen<span class="extra"> to this page</span></span></button>
+        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
+      </div>
+    </div>
+  </div>
+
   <main id="main" tabindex="-1">
     <div class="wrap">
       <p class="eyebrow">About us</p>
       <h1>About Mindalo</h1>
-      <p class="lead">Mindalo exists to close the gap between dementia diagnosis, care and understanding across Africa.</p>
+      <p class="lead">Mindalo exists to close the gap between dementia diagnosis, care and understanding across Africa. We work across the whole journey, from the first signs to living well with dementia. This matters because too many families face that journey with little help. We believe good dementia care starts with dignity.</p>
 
       <section class="article" aria-labelledby="why-title">
         <h2 id="why-title">Why we exist</h2>
-        <p>Dementia is rising sharply across Africa. But diagnosis often comes late, carers are often left without support, and many people still do not understand the condition. Too many families face a hard journey largely alone.</p>
-        <p>Africa’s population is ageing fast, and dementia care has not kept pace. Mindalo is here to help change that — one family, one community, one conversation at a time.</p>
+        <p>Dementia is rising sharply across Africa. Yet diagnosis often comes late, carers are often left without support, and many people still misunderstand the condition. Africa’s population is ageing fast, and dementia care has not kept pace. Mindalo is here to help change that — one family, one community, one conversation at a time.</p>
       </section>
 
       <section class="section" aria-labelledby="do-title">
         <h2 id="do-title">What we do</h2>
-        <p>Our work follows the whole dementia journey.</p>
-        <ol class="journey">
-          <li><span class="step">Diagnosis</span><h3>Earlier recognition</h3><p>Supporting earlier recognition of dementia and better access to assessment.</p></li>
-          <li><span class="step">Support</span><h3>Families and carers</h3><p>Resources and community for the people who give care every day.</p></li>
-          <li><span class="step">Education</span><h3>Public understanding</h3><p>Awareness and training that reduce stigma and misinformation.</p></li>
+        <p>Our work follows the dementia journey in three stages. Each stage meets a different need, from getting answers, to getting support, to building understanding. Working across all three means families are not left to fall into the gaps between them. The three stages are:</p>
+        <ol class="timeline">
+          <li data-stage="diagnosis">
+            <span class="tl-num" aria-hidden="true">1</span>
+            <div class="tl-body">
+              <span class="tl-stage">Diagnosis</span><h3>Earlier recognition</h3>
+              <p>Supporting earlier recognition of dementia and better access to assessment.</p>
+              <a class="tl-link" href="guides/signs-of-dementia.html">Start with the signs <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li data-stage="support">
+            <span class="tl-num" aria-hidden="true">2</span>
+            <div class="tl-body">
+              <span class="tl-stage">Support</span><h3>Families and carers</h3>
+              <p>Resources and community for the people who give care every day.</p>
+              <a class="tl-link" href="guides.html">Guides for carers <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li data-stage="education">
+            <span class="tl-num" aria-hidden="true">3</span>
+            <div class="tl-body">
+              <span class="tl-stage">Education</span><h3>Public understanding</h3>
+              <p>Awareness and training that reduce stigma and misinformation.</p>
+              <a class="tl-link" href="training.html">Our training <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
         </ol>
       </section>
 
@@ -92,7 +112,7 @@
 
       <section class="section panel" id="work-with-us" aria-labelledby="work-title">
         <h2 id="work-title">Work with us</h2>
-        <p>We would like to hear from:</p>
+        <p>We cannot close the gap on our own. Partners help us reach more families and train more health workers. Every partner brings skills, reach or resources that we do not have alone. We would like to hear from:</p>
         <ul>
           <li>health services, clinics and hospitals</li>
           <li>universities and researchers</li>
@@ -105,8 +125,7 @@
 
       <section class="section article" id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Contact us</h2>
-        <p>Email: <a href="mailto:hello@mindalo.org">hello@mindalo.org</a></p>
-        <p class="muted">We are not an emergency service. If someone is unwell or in danger, contact your local emergency services or go to the nearest hospital.</p>
+        <p>The best way to reach us is by email. Write to <a href="mailto:hello@mindalo.org">hello@mindalo.org</a> with your question or idea. Please note that we are not an emergency service. If someone is unwell or in danger, contact your local emergency services or go to the nearest hospital.</p>
       </section>
 
     </div>
@@ -121,9 +140,9 @@
       <div>
         <h2>Guides for carers</h2>
         <ul>
-            <li><a href="guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="guides/signs-of-dementia.html">Signs of dementia</a></li>
             <li><a href="guides/getting-a-diagnosis.html">Getting checked by a health worker</a></li>
+            <li><a href="guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="guides/everyday-care.html">Everyday care at home</a></li>
             <li><a href="guides/caring-for-yourself.html">Looking after yourself as a carer</a></li>
         </ul>

@@ -31,18 +31,19 @@
   if (!synth || typeof SpeechSynthesisUtterance === "undefined") { listenBtn.hidden = true; return; }
   listenBtn.hidden = false;
   var label = listenBtn.querySelector(".listen-label");
+  var startLabel = label.innerHTML;
 
   function stop() {
     synth.cancel();
     listenBtn.setAttribute("aria-pressed", "false");
-    label.textContent = "Listen to this page";
+    label.innerHTML = startLabel;
   }
 
   function pageText() {
     var main = document.getElementById("main");
     if (!main) return "";
     var parts = [];
-    main.querySelectorAll("h1, h2, h3, p, li, dt, dd").forEach(function (el) {
+    main.querySelectorAll("h1, h2, h3, p, li").forEach(function (el) {
       if (el.closest("[data-no-read]")) return;
       if (el.matches("li") && el.querySelector("p, h3")) return; // read the parts instead
       var t = el.innerText.replace(/\s+/g, " ").trim();
@@ -61,7 +62,7 @@
     synth.cancel();
     synth.speak(u);
     listenBtn.setAttribute("aria-pressed", "true");
-    label.textContent = "Stop listening";
+    label.textContent = "Stop";
   });
   window.addEventListener("pagehide", function () { synth.cancel(); });
 })();

@@ -20,49 +20,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&amp;display=swap">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <script src="/assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=2">
+  <script src="/assets/js/site.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="tools" role="region" aria-label="Reading tools">
-    <div class="wrap">
-      <div class="tools-group" role="group" aria-label="Text size">
-        <span class="tools-label" aria-hidden="true">Text size</span>
-        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
-        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
-        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
-      </div>
-      <div class="tools-right">
-        <button class="tool-btn" type="button" id="listen" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen to this page</span></button>
-        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
-      </div>
-    </div>
-  </div>
-
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-row">
       <a class="brand" href="/index.html" aria-label="Mindalo home">
         <img src="/assets/mindalo-mark.svg" alt="" width="64" height="64">
         <span><span class="wordmark" aria-hidden="true">m<span class="i">ı</span>ndalo</span><span class="brand-tag">Diagnosis · Support · Education</span></span>
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/guides.html">Guides for carers</a></li>
-          <li><a href="/training.html">Training</a></li>
-          <li><a href="/about.html">About us</a></li>
+            <li><a href="/index.html"><span>Home</span></a></li>
+            <li><a href="/guides.html"><span>Guides<span class="nav-extra"> for carers</span></span></a></li>
+            <li><a href="/training.html"><span>Training</span></a></li>
+            <li><a href="/about.html"><span>About<span class="nav-extra"> us</span></span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div class="tools" role="region" aria-label="Reading tools">
+    <div class="wrap">
+      <div class="tools-group" role="group" aria-label="Text size">
+        <span class="tools-label" aria-hidden="true">Text<span class="extra"> size</span></span>
+        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
+        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
+        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
+      </div>
+      <div class="tools-right">
+        <button class="tool-btn" type="button" id="listen" aria-pressed="false" aria-label="Listen to this page" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen<span class="extra"> to this page</span></span></button>
+        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
+      </div>
+    </div>
+  </div>
+
   <main id="main" tabindex="-1">
     <div class="wrap">
       <div class="article">
         <h1>We cannot find that page</h1>
-        <p class="lead">The page may have moved, or the link may be wrong.</p>
+        <p class="lead">We cannot find the page you asked for. It may have moved, or the link may be wrong. This can happen when a page is renamed. Use the buttons below to find your way.</p>
         <div class="button-row">
           <a class="button" href="/index.html">Go to the home page</a>
           <a class="button secondary" href="/guides.html">See our guides</a>
@@ -81,9 +81,9 @@
       <div>
         <h2>Guides for carers</h2>
         <ul>
-            <li><a href="/guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="/guides/signs-of-dementia.html">Signs of dementia</a></li>
             <li><a href="/guides/getting-a-diagnosis.html">Getting checked by a health worker</a></li>
+            <li><a href="/guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="/guides/everyday-care.html">Everyday care at home</a></li>
             <li><a href="/guides/caring-for-yourself.html">Looking after yourself as a carer</a></li>
         </ul>

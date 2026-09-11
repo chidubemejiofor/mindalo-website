@@ -1,5 +1,6 @@
 /* ==========================================================================
-   Mindalo — site styles
+   Mindalo — site styles (v2: mobile-first header, compact reading tools,
+   step-by-step timeline)
    Designed for older readers and people living with dementia:
    large text, strong contrast, underlined links, big tap targets,
    the same layout on every page, no motion that is not needed.
@@ -21,6 +22,11 @@
   --warn-bg: #FBEFD3;
   --warn-edge: #B7791F;
 
+  /* Journey stages */
+  --diagnosis: #8A5A12;
+  --support: #9A4730;
+  --education: #1F3B4D;
+
   --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Verdana, "Segoe UI", system-ui, sans-serif;
 
   --measure: 34rem;       /* comfortable reading width */
@@ -30,7 +36,7 @@
   --tap: 3rem;            /* minimum height of anything you press */
 }
 
-/* Base size is 20px. The text-size buttons change this one value. */
+/* Base size is 20px on computers. The text-size buttons change this one value. */
 html { font-size: 125%; -webkit-text-size-adjust: 100%; }
 html[data-text="large"]   { font-size: 143.75%; }  /* 23px */
 html[data-text="largest"] { font-size: 162.5%; }   /* 26px */
@@ -51,14 +57,13 @@ img, svg { max-width: 100%; height: auto; }
 
 h1, h2, h3 {
   overflow-wrap: break-word;
-  hyphens: manual;
   line-height: 1.2;
   text-wrap: balance;
   margin: 0 0 0.5em;
   font-weight: 800;
   letter-spacing: -0.01em;
 }
-h1 { font-size: clamp(2rem, 1.2rem + 3vw, 2.9rem); }
+h1 { font-size: clamp(1.8rem, 1.1rem + 3vw, 2.9rem); }
 h2 { font-size: 1.6rem; margin-top: 1.8em; }
 h3 { font-size: 1.2rem; margin-top: 1.4em; }
 p, ul, ol { margin: 0 0 1em; max-width: var(--measure); }
@@ -85,29 +90,12 @@ a:hover { color: var(--ink); text-decoration-thickness: 3px; }
 
 .wrap { max-width: var(--wide); margin-inline: auto; padding-inline: var(--gutter); }
 
-/* ---------- Reading tools bar ---------- */
-.tools { background: var(--sand); border-bottom: 1px solid var(--line); font-size: 0.85rem; }
-.tools .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; padding-block: 0.4rem; }
-.tools-group { display: flex; align-items: center; gap: 0.4rem; }
-.tools-label { color: var(--ink-soft); margin-right: 0.2rem; }
-.tool-btn {
-  font: inherit; color: var(--ink); background: var(--cream);
-  border: 2px solid var(--line); border-radius: 8px;
-  min-height: 2.4rem; min-width: 2.4rem; padding: 0 0.7rem;
-  cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
-}
-.tool-btn:hover { border-color: var(--ink); }
-.tool-btn[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
-.tool-btn .a1 { font-size: 0.85rem; } .tool-btn .a2 { font-size: 1.05rem; } .tool-btn .a3 { font-size: 1.3rem; }
-.tool-btn svg { width: 1.1em; height: 1.1em; }
-.tools-right { margin-left: auto; display: flex; gap: 0.5rem; }
-
-/* ---------- Header ---------- */
+/* ---------- Header: brand first, then the menu ---------- */
 .site-header { border-bottom: 1px solid var(--line); }
-.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding-block: 1rem; }
+.header-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 2rem; padding-block: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); }
 .brand:hover { color: var(--ink); }
-.brand img { width: 3.2rem; height: 3.2rem; }
+.brand img { width: 3.2rem; height: 3.2rem; flex: none; }
 .wordmark { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
 .wordmark .i { position: relative; }
 .wordmark .i::after {
@@ -120,7 +108,7 @@ a:hover { color: var(--ink); text-decoration-thickness: 3px; }
 .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; max-width: none; }
 .site-nav li { margin: 0; }
 .site-nav a {
-  display: flex; align-items: center; min-height: var(--tap);
+  display: flex; align-items: center; justify-content: center; min-height: var(--tap);
   padding: 0 0.9rem; border-radius: 8px;
   color: var(--ink); font-weight: 700; text-decoration: none;
   border: 2px solid transparent;
@@ -128,10 +116,27 @@ a:hover { color: var(--ink); text-decoration-thickness: 3px; }
 .site-nav a:hover { background: var(--sand); }
 .site-nav a[aria-current="page"] { border-color: var(--ink); background: var(--cream); }
 
+/* ---------- Reading tools (text size, listen, print) ---------- */
+.tools { background: var(--sand); border-bottom: 1px solid var(--line); font-size: 0.78rem; }
+.tools .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.2rem; padding-block: 0.35rem; }
+.tools-group { display: flex; align-items: center; gap: 0.35rem; }
+.tools-label { color: var(--ink-soft); margin-right: 0.15rem; }
+.tool-btn {
+  font: inherit; color: var(--ink); background: var(--cream);
+  border: 2px solid var(--line); border-radius: 8px;
+  min-height: 2.1rem; min-width: 2.1rem; padding: 0 0.6rem;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
+}
+.tool-btn:hover { border-color: var(--ink); }
+.tool-btn[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.tool-btn .a1 { font-size: 0.8rem; } .tool-btn .a2 { font-size: 0.98rem; } .tool-btn .a3 { font-size: 1.18rem; }
+.tool-btn svg { width: 1.05em; height: 1.05em; flex: none; }
+.tools-right { margin-left: auto; display: flex; gap: 0.4rem; }
+
 /* ---------- Page furniture ---------- */
 main { display: block; padding-block: 2.5rem 4rem; }
 .eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); margin-bottom: 0.8rem; }
-.lead { font-size: 1.2rem; color: var(--ink); max-width: 34rem; }
+.lead { font-size: 1.12rem; color: var(--ink); max-width: 36rem; }
 .muted { color: var(--ink-soft); }
 .small { font-size: 0.85rem; }
 
@@ -142,12 +147,11 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .crumbs [aria-current] { color: var(--ink-soft); }
 
 .button {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  min-height: var(--tap); padding: 0.4rem 1.3rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  min-height: var(--tap); padding: 0.4rem 1.3rem; max-width: 100%;
   background: var(--ink); color: var(--cream);
   font-weight: 700; text-decoration: none; border-radius: 999px;
-  border: 2px solid var(--ink);
-  max-width: 100%;
+  border: 2px solid var(--ink); text-align: center;
 }
 .button:hover { background: var(--night); color: var(--cream); }
 .button.secondary { background: transparent; color: var(--ink); }
@@ -160,7 +164,7 @@ main { display: block; padding-block: 2.5rem 4rem; }
 
 /* ---------- Home: hero ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: center; }
-.hero h1 { font-size: clamp(1.85rem, 1rem + 3.2vw, 2.9rem); letter-spacing: -0.02em; }
+.hero h1 { font-size: clamp(1.8rem, 1rem + 3.2vw, 2.9rem); letter-spacing: -0.02em; }
 .hero h1 .quiet { display: block; color: var(--ink-soft); font-weight: 700; font-size: 0.62em; letter-spacing: -0.005em; margin-top: 0.4em; }
 .hero-mark { justify-self: center; width: min(100%, 15rem); }
 .hero-mark img { width: 100%; }
@@ -178,9 +182,49 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .door span { grid-column: 1; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.45; }
 .door .arrow { grid-column: 2; grid-row: 1 / span 2; font-size: 1.5rem; color: var(--clay); }
 
+/* ---------- Timeline: what Mindalo offers, step by step ---------- */
+.timeline { list-style: none; padding: 0; margin: 1.6rem 0 0; max-width: 46rem; }
+.timeline > li {
+  position: relative; margin: 0;
+  display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 1.1rem;
+  padding-bottom: 1.8rem;
+}
+.timeline > li:last-child { padding-bottom: 0; }
+.timeline > li:not(:last-child)::before {
+  content: ""; position: absolute; left: calc(1.3rem - 1.5px); top: 2.8rem; bottom: 0.2rem;
+  width: 3px; border-radius: 3px; background: var(--line);
+}
+.tl-num {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--education); color: var(--cream);
+  font-weight: 800; font-size: 1.05rem; font-variant-numeric: tabular-nums;
+}
+.tl-body { padding-top: 0.2rem; min-width: 0; }
+.tl-stage { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--education); }
+.tl-body h3 { margin: 0.1rem 0 0.35rem; font-size: 1.25rem; }
+.tl-body p { margin: 0 0 0.45rem; font-size: 0.95rem; color: var(--ink-soft); }
+.tl-body .tl-link { font-weight: 700; font-size: 0.95rem; }
+.tl-meta { font-size: 0.8rem; color: var(--ink-soft); }
+[data-stage="diagnosis"] .tl-num { background: var(--diagnosis); }
+[data-stage="diagnosis"] .tl-stage { color: var(--diagnosis); }
+[data-stage="support"] .tl-num { background: var(--support); }
+[data-stage="support"] .tl-stage { color: var(--support); }
+
+/* Timeline as a list of guides: the whole step is one big link */
+.tl-card {
+  display: block; padding: 0.9rem 1.1rem; margin-top: -0.2rem;
+  background: var(--cream); border: 2px solid var(--line); border-radius: var(--radius);
+  color: var(--ink); text-decoration: none;
+}
+.tl-card:hover { border-color: var(--ink); background: var(--sand); color: var(--ink); }
+.tl-card h3 { margin: 0.1rem 0 0.3rem; }
+.tl-card p { margin: 0 0 0.35rem; font-size: 0.95rem; color: var(--ink-soft); }
+.tl-card .tl-go { display: inline-block; margin-top: 0.3rem; font-weight: 700; font-size: 0.9rem; color: var(--clay); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+
 /* ---------- Home: myths and facts ---------- */
 .myths { list-style: none; padding: 0; margin: 1.4rem 0 0; max-width: none; display: grid; gap: 0; border-top: 2px solid var(--ink); }
-.myths li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 0.5rem 2.5rem; padding-block: 1.3rem; border-bottom: 1px solid var(--line); margin: 0; }
+.myths li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 0.5rem 2.5rem; padding-block: 1.3rem; border-bottom: 1px solid var(--line); margin: 0; }
 .myths .said, .myths .fact { margin: 0; max-width: none; }
 .myths .tag { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.3rem; }
 .myths .said { color: var(--ink-soft); font-style: italic; }
@@ -193,24 +237,9 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .figures b { display: block; font-size: 1.8rem; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .figures span { display: block; color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.3rem; }
 
-.panel { background: var(--sand); border-radius: var(--radius); padding: clamp(1.3rem, 3vw, 2.2rem); }
+.panel { background: var(--sand); border-radius: var(--radius); padding: clamp(1.2rem, 3vw, 2.2rem); }
 .panel > :last-child { margin-bottom: 0; }
 .panel h2 { margin-top: 0; }
-
-/* ---------- Guides list ---------- */
-.guide-list { list-style: none; padding: 0; margin: 1.6rem 0 0; max-width: 44rem; display: grid; gap: 1rem; }
-.guide-list li { margin: 0; }
-.guide-link {
-  display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1rem; align-items: center;
-  padding: 1.2rem 1.4rem; background: var(--cream);
-  border: 2px solid var(--line); border-radius: var(--radius);
-  text-decoration: none; color: var(--ink);
-}
-.guide-link:hover { border-color: var(--ink); background: var(--sand); color: var(--ink); }
-.guide-link strong { font-size: 1.2rem; }
-.guide-link span { grid-column: 1; color: var(--ink-soft); font-size: 0.9rem; }
-.guide-link .time { font-size: 0.8rem; color: var(--clay); font-weight: 700; }
-.guide-link .arrow { grid-column: 2; grid-row: 1 / span 3; font-size: 1.5rem; color: var(--clay); }
 
 /* ---------- Guide page ---------- */
 .article { max-width: var(--measure); }
@@ -231,8 +260,6 @@ main { display: block; padding-block: 2.5rem 4rem; }
 /* ---------- Training ---------- */
 .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
 .two-col h2 { margin-top: 0; }
-.steps { padding-left: 1.4rem; }
-.steps li { padding-left: 0.3rem; }
 .formats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 1.4rem 0 0; max-width: none; }
 .formats li { margin: 0; background: var(--sand); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
 .formats h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
@@ -253,21 +280,60 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .footer-note { grid-column: 1 / -1; border-top: 1px solid #2E4556; padding-top: 1.2rem; font-size: 0.8rem; color: #C9D2D8; }
 .footer-note p { max-width: none; margin-bottom: 0.4rem; }
 
-/* ---------- Narrow screens ---------- */
+/* ---------- Tablets and small laptops ---------- */
 @media (max-width: 52rem) {
   .hero { grid-template-columns: minmax(0, 1fr); }
   .hero-mark { display: none; }
-  .doors, .two-col, .formats { grid-template-columns: 1fr; }
-  .myths li { grid-template-columns: 1fr; }
-  .site-footer .wrap { grid-template-columns: 1fr; }
+  .doors, .two-col, .formats { grid-template-columns: minmax(0, 1fr); }
+  .myths li { grid-template-columns: minmax(0, 1fr); }
+  .site-footer .wrap { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- Phones ---------- */
 @media (max-width: 40rem) {
-  .figures { grid-template-columns: 1fr; }
+  /* Slightly smaller base on phones (18px) so lines are not broken every few words */
+  html { font-size: 112.5%; }
+  html[data-text="large"]   { font-size: 128%; }
+  html[data-text="largest"] { font-size: 145%; }
+
+  main { padding-block: 1.4rem 3rem; }
+  .section { margin-top: 2.8rem; }
+  h2 { font-size: 1.4rem; }
+
+  /* Mindalo comes first: brand on its own row, menu as one compact row */
+  .header-row { padding-block: 0.8rem 0.6rem; gap: 0.7rem; }
+  .brand img { width: 2.7rem; height: 2.7rem; }
+  .wordmark { font-size: 1.75rem; }
+  .brand-tag { font-size: 0.58rem; letter-spacing: 0.12em; margin-top: 0.3rem; }
   .site-nav { width: 100%; }
-  .site-nav ul { display: grid; grid-template-columns: 1fr 1fr; }
-  .site-nav a { justify-content: center; text-align: center; background: var(--sand); line-height: 1.25; padding-block: 0.3rem; }
-  .tools-right { margin-left: 0; }
-  .brand-tag { display: none; }
+  .site-nav ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.3rem; }
+  .site-nav a { min-height: 2.6rem; padding: 0 0.2rem; font-size: 0.82rem; background: var(--sand); line-height: 1.2; text-align: center; }
+  .nav-extra { display: none; }
+
+  /* Reading tools: one slim row */
+  .tools { font-size: 0.72rem; }
+  .tools .wrap { flex-wrap: nowrap; gap: 0.5rem; padding-block: 0.3rem; }
+  .tool-btn { min-height: 2rem; min-width: 2rem; padding: 0 0.45rem; border-width: 1.5px; }
+  .tool-btn .a1 { font-size: 0.72rem; } .tool-btn .a2 { font-size: 0.86rem; } .tool-btn .a3 { font-size: 1rem; }
+  .tools-right { gap: 0.3rem; }
+  .tools .extra, #print-page { display: none; }
+
+  /* Hero: catchphrase straight after the brand, then the paragraph */
+  .hero .eyebrow { display: none; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero h1 .quiet { font-size: 0.68em; }
+  .lead { font-size: 1.05rem; }
+  .hero .button-row { flex-direction: column; margin-top: 1.2rem; }
+  .hero .button { width: 100%; }
+
+  .door { padding: 1rem 1.1rem; min-height: 0; }
+  .door strong { font-size: 1.05rem; }
+  .figures { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .timeline > li { grid-template-columns: 2.2rem minmax(0, 1fr); gap: 0 0.85rem; padding-bottom: 1.5rem; }
+  .timeline > li:not(:last-child)::before { left: calc(1.1rem - 1.5px); top: 2.4rem; }
+  .tl-num { width: 2.2rem; height: 2.2rem; font-size: 0.95rem; }
+  .tl-body h3 { font-size: 1.12rem; }
+  .key-points { padding: 1.1rem 1.1rem 0.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -284,25 +350,5 @@ main { display: block; padding-block: 2.5rem 4rem; }
   .site-footer .wrap > :not(.footer-note) { display: none; }
   .footer-note { color: #000; border-color: #999; }
   a { color: #000; }
-  .key-points, .panel, .callout { border: 1px solid #999; background: #fff; }
-}
-
-/* ---------- Home: the journey (Diagnosis → Support → Education) ---------- */
-.journey { list-style: none; counter-reset: step; padding: 0; margin: 1.6rem 0 0; max-width: none;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem 2.6rem; }
-.journey li { margin: 0; position: relative; counter-increment: step; padding-top: 1.1rem; border-top: 4px solid var(--ink); }
-.journey li:nth-child(1) { border-top-color: #C98A43; }
-.journey li:nth-child(2) { border-top-color: #A9563F; }
-.journey li:nth-child(3) { border-top-color: var(--ink); }
-.journey li:not(:last-child)::after {
-  content: "→"; position: absolute; right: -1.95rem; top: -0.95rem;
-  font-size: 1.3rem; font-weight: 700; color: var(--ink-soft); background: var(--cream); padding: 0 0.2rem;
-}
-.journey .step { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); }
-.journey .step::before { content: "Step " counter(step) " · "; }
-.journey h3 { margin: 0.2rem 0 0.5rem; font-size: 1.45rem; }
-.journey p { font-size: 0.95rem; margin-bottom: 0.7rem; }
-@media (max-width: 52rem) {
-  .journey { grid-template-columns: 1fr; }
-  .journey li:not(:last-child)::after { content: none; }
+  .key-points, .panel, .callout, .tl-card { border: 1px solid #999; background: #fff; }
 }

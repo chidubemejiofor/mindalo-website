@@ -20,58 +20,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&amp;display=swap">
-  <link rel="stylesheet" href="../assets/css/site.css">
-  <script src="../assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/site.css?v=2">
+  <script src="../assets/js/site.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="tools" role="region" aria-label="Reading tools">
-    <div class="wrap">
-      <div class="tools-group" role="group" aria-label="Text size">
-        <span class="tools-label" aria-hidden="true">Text size</span>
-        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
-        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
-        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
-      </div>
-      <div class="tools-right">
-        <button class="tool-btn" type="button" id="listen" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen to this page</span></button>
-        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
-      </div>
-    </div>
-  </div>
-
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-row">
       <a class="brand" href="../index.html" aria-label="Mindalo home">
         <img src="../assets/mindalo-mark.svg" alt="" width="64" height="64">
         <span><span class="wordmark" aria-hidden="true">m<span class="i">ı</span>ndalo</span><span class="brand-tag">Diagnosis · Support · Education</span></span>
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../guides.html" aria-current="page">Guides for carers</a></li>
-          <li><a href="../training.html">Training</a></li>
-          <li><a href="../about.html">About us</a></li>
+            <li><a href="../index.html"><span>Home</span></a></li>
+            <li><a href="../guides.html" aria-current="page"><span>Guides<span class="nav-extra"> for carers</span></span></a></li>
+            <li><a href="../training.html"><span>Training</span></a></li>
+            <li><a href="../about.html"><span>About<span class="nav-extra"> us</span></span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div class="tools" role="region" aria-label="Reading tools">
+    <div class="wrap">
+      <div class="tools-group" role="group" aria-label="Text size">
+        <span class="tools-label" aria-hidden="true">Text<span class="extra"> size</span></span>
+        <button class="tool-btn" type="button" data-size="normal" aria-pressed="true" aria-label="Normal text size"><span class="a1">A</span></button>
+        <button class="tool-btn" type="button" data-size="large" aria-pressed="false" aria-label="Large text size"><span class="a2">A</span></button>
+        <button class="tool-btn" type="button" data-size="largest" aria-pressed="false" aria-label="Largest text size"><span class="a3">A</span></button>
+      </div>
+      <div class="tools-right">
+        <button class="tool-btn" type="button" id="listen" aria-pressed="false" aria-label="Listen to this page" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg><span class="listen-label">Listen<span class="extra"> to this page</span></span></button>
+        <button class="tool-btn" type="button" id="print-page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h12v5H6V2zm-2 7h16a2 2 0 0 1 2 2v6h-4v5H6v-5H2v-6a2 2 0 0 1 2-2zm4 8v3h8v-3H8zm10-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg><span>Print</span></button>
+      </div>
+    </div>
+  </div>
+
   <main id="main" tabindex="-1">
     <div class="wrap">
-<nav class="crumbs" aria-label="You are here"><ol><li><a href="../index.html">Home</a></li><li><a href="../guides.html">Guides for carers</a></li><li><span aria-current="page">Getting checked by a health worker</span></li></ol></nav>
+      <nav class="crumbs" aria-label="You are here"><ol><li><a href="../index.html">Home</a></li><li><a href="../guides.html">Guides for carers</a></li><li><span aria-current="page">Getting checked by a health worker</span></li></ol></nav>
       <article class="article">
-        <p class="eyebrow">Guide for carers</p>
+        <p class="eyebrow">Guide 2 of 5 · Diagnosis</p>
         <h1>Getting checked by a health worker</h1>
         <p class="meta">About 4 minutes to read · Last checked September 2026</p>
         <section class="key-points" aria-labelledby="kp-title">
           <h2 id="kp-title">The main points</h2>
           <ul>
-          <li>An early check helps the person and family understand what is happening and plan ahead.</li>
-          <li>Take notes and a list of all medicines to the appointment.</li>
-          <li>Checks may include questions, memory tests and blood tests.</li>
-          <li>After a diagnosis, the person can still live well with the right support.</li>
+            <li>An early check helps the person and family understand what is happening and plan ahead.</li>
+            <li>Take notes and a list of all medicines to the appointment.</li>
+            <li>Checks may include questions, memory tests and blood tests.</li>
+            <li>After a diagnosis, the person can still live well with the right support.</li>
           </ul>
         </section>
         <h2>Why getting checked helps</h2>
@@ -91,15 +91,15 @@
         </ul>
 
         <h2>What might happen</h2>
-        <p>The health worker may:</p>
+        <p>A health worker will try to find out what is causing the changes. They will look at the person’s health as a whole, not only their memory. This helps them rule out other problems that can be treated. The health worker may:</p>
         <ul>
           <li>ask questions about the person’s health and daily life</li>
           <li>do short memory and thinking tests</li>
           <li>check blood pressure, eyes and hearing</li>
           <li>take blood tests to look for other causes</li>
           <li>send the person to a specialist, or for a brain scan, if one is available</li>
+          <li>ask you to come back, as it can take more than one visit to find out what is wrong</li>
         </ul>
-        <p>It may take more than one visit to find out what is wrong.</p>
 
         <h2>Questions you could ask</h2>
         <ul>
@@ -111,7 +111,7 @@
         </ul>
 
         <h2>After a diagnosis</h2>
-        <p>Hearing that someone has dementia can be a shock. Take your time. It is normal to feel sad, worried or even relieved to have an answer.</p>
+        <p>Hearing that someone has dementia can be a shock. You may feel sad or worried, or even relieved to finally have an answer. All of these feelings are normal, and they can change from day to day. Take your time, and take the next steps together:</p>
         <ul>
           <li>Talk as a family about what the person wants for the future.</li>
           <li>Sort out money, property and legal matters early, while the person can still take part.</li>
@@ -119,11 +119,11 @@
           <li>Share the care. Nobody should do it alone.</li>
         </ul>
 
-        <p class="disclaimer">This guide gives general information. It does not replace advice from a doctor, nurse or health worker who knows the person.</p>
+        <p class="disclaimer">This guide gives general information about dementia. It is not medical advice for any one person. A doctor, nurse or health worker who knows the person can give advice that fits them. Please speak to them about any worries.</p>
         <nav class="next-guide" aria-label="Next guide">
-          <p class="muted small">Next guide</p>
-          <p><a href="everyday-care.html"><strong>Everyday care at home</strong></a></p>
-          <p class="small"><a href="../guides.html">See all guides</a></p>
+          <p class="muted small">Next step 3 of 5</p>
+          <p><a href="what-is-dementia.html"><strong>What is dementia?</strong></a></p>
+          <p class="small"><a href="../guides.html">See all guides in order</a></p>
         </nav>
       </article>
 
@@ -139,9 +139,9 @@
       <div>
         <h2>Guides for carers</h2>
         <ul>
-            <li><a href="../guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="../guides/signs-of-dementia.html">Signs of dementia</a></li>
             <li><a href="../guides/getting-a-diagnosis.html">Getting checked by a health worker</a></li>
+            <li><a href="../guides/what-is-dementia.html">What is dementia?</a></li>
             <li><a href="../guides/everyday-care.html">Everyday care at home</a></li>
             <li><a href="../guides/caring-for-yourself.html">Looking after yourself as a carer</a></li>
         </ul>
