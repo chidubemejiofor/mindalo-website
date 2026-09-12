@@ -23,7 +23,7 @@
 
   /* ---------------- Print ---------------- */
   var printBtn = document.getElementById("print-page");
-  if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+  if (printBtn) printBtn.addEventListener("click", function () { window.print(); }); Array.prototype.forEach.call(document.querySelectorAll(".js-print"), function (b) { b.addEventListener("click", function () { window.print(); }); });
 
   /* ---------------- Language menu ---------------- */
   var langMenu = document.querySelector(".lang-menu");
