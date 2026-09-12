@@ -174,7 +174,7 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .hero h1 { font-size: clamp(1.8rem, 1rem + 3.2vw, 2.9rem); letter-spacing: -0.02em; }
 .hero h1 .quiet { display: block; color: var(--ink-soft); font-weight: 700; font-size: 0.62em; letter-spacing: -0.005em; margin-top: 0.4em; }
 .hero-mark { justify-self: center; width: min(100%, 15rem); }
-.hero-mark img { width: 100%; }
+.hero-mark img { width: 100%; } .hero:has(.hero-art) { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); } .hero-art { width: min(100%, 27rem); } .hero-art img { width: 100%; border-radius: 22px; }
 
 /* ---------- Home: "How can we help" ---------- */
 .doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
@@ -289,8 +289,8 @@ main { display: block; padding-block: 2.5rem 4rem; }
 
 /* ---------- Tablets and small laptops ---------- */
 @media (max-width: 52rem) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-mark { display: none; }
+  .hero, .hero:has(.hero-art) { grid-template-columns: minmax(0, 1fr); }
+  .hero-mark { display: none; } .hero-art { display: block; justify-self: start; width: min(100%, 24rem); margin-top: 0.5rem; }
   .doors, .two-col, .formats { grid-template-columns: minmax(0, 1fr); }
   .myths li { grid-template-columns: minmax(0, 1fr); }
   .site-footer .wrap { grid-template-columns: minmax(0, 1fr); }
@@ -481,7 +481,7 @@ html[lang="am"] .eyebrow, html[lang="am"] .tl-stage, html[lang="am"] .brand-tag 
   .brand img, .hero-mark img {
     background: var(--mark-chip); border-radius: 50%; padding: 0.2rem;
   }
-  .hero-mark img { padding: 0.55rem; }
+  .hero-mark img { padding: 0.55rem; } .hero-art img { background: none; border-radius: 22px; padding: 0; }
 
   /* The main button is light on a dark page; keep its hover readable. */
   .button:hover { background: var(--night-accent); border-color: var(--night-accent); color: var(--night); }
