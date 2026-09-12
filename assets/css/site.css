@@ -34,6 +34,11 @@
   --gutter: clamp(1rem, 4vw, 2rem);
   --radius: 10px;
   --tap: 3rem;            /* minimum height of anything you press */
+
+  /* A light disc sits behind the logo mark wherever the background is dark. */
+  --mark-chip: #F7F1E6;
+
+  color-scheme: light;
 }
 
 /* Base size is 20px on computers. The text-size buttons change this one value. */
@@ -277,7 +282,7 @@ main { display: block; padding-block: 2.5rem 4rem; }
 .site-footer li { margin-bottom: 0.4rem; }
 .site-footer p { max-width: 28rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
-.footer-brand img { width: 2.8rem; height: 2.8rem; background: var(--cream); border-radius: 50%; padding: 0.15rem; }
+.footer-brand img { width: 2.8rem; height: 2.8rem; background: var(--mark-chip); border-radius: 50%; padding: 0.15rem; }
 .footer-brand .wordmark { font-size: 1.6rem; color: var(--night-text); }
 .footer-note { grid-column: 1 / -1; border-top: 1px solid #2E4556; padding-top: 1.2rem; font-size: 0.8rem; color: #C9D2D8; }
 .footer-note p { max-width: none; margin-bottom: 0.4rem; }
@@ -441,3 +446,60 @@ html[lang="am"] .eyebrow, html[lang="am"] .tl-stage, html[lang="am"] .brand-tag 
   .lang-code { display: inline; }
 }
 @media print { .lang-menu, .translated-note { display: none !important; } }
+
+
+/* ==========================================================================
+   Dark mode — follows the setting on the phone or computer.
+   Same layout, same type sizes; only the colours change. Backgrounds stay a
+   deep blue-grey rather than black, and text a warm off-white rather than
+   pure white, because hard black-and-white edges are tiring to read.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --cream: #131E26;       /* page background */
+    --sand: #1E303B;        /* panels */
+    --sand-deep: #2A3F4D;   /* hover on panels */
+    --line: #5E7F90;        /* borders, button edges */
+    --ink: #F2ECE2;         /* main text, headings */
+    --ink-soft: #C2CED6;    /* secondary text */
+    --clay: #F4A98B;        /* links, labels */
+    --ochre: #E9C98A;       /* the gold dot */
+    --night: #0C161D;       /* footer, floating player */
+    --night-text: #F2ECE2;
+    --night-accent: #E9C98A;
+    --warn-bg: #2C2412;
+    --warn-edge: #D9A441;
+
+    --diagnosis: #E2B45F;
+    --support: #F0A084;
+    --education: #9FC7DF;
+  }
+
+  /* The logo mark keeps its own colours, so it sits on a light disc. */
+  .brand img, .hero-mark img {
+    background: var(--mark-chip); border-radius: 50%; padding: 0.2rem;
+  }
+  .hero-mark img { padding: 0.55rem; }
+
+  /* The main button is light on a dark page; keep its hover readable. */
+  .button:hover { background: var(--night-accent); border-color: var(--night-accent); color: var(--night); }
+  .button.secondary:hover { background: var(--sand); color: var(--ink); }
+
+  /* Listen: the highlighted sentence stays amber with dark text. */
+  .reading { background: #F6D89A; color: #14212B; box-shadow: 0 0 0 0.35rem #F6D89A; }
+
+  /* Floating player stays dark so the page behind it is still readable. */
+  .player { background: var(--night); color: var(--night-text); border: 1px solid var(--line); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55); }
+  .player button { background: var(--night-text); color: var(--night); border-color: var(--night-text); }
+  .player .player-stop { background: transparent; color: var(--night-text); border-color: var(--night-text); }
+  .player .player-stop:hover { background: rgba(255, 255, 255, 0.14); color: var(--night-text); }
+  .player :focus-visible { outline-color: var(--night-text); }
+
+  /* The footer sits close to the page colour, so it gets a hairline. */
+  .site-footer { border-top: 1px solid var(--line); }
+
+  .lang-menu ul { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55); }
+  .footer-note { border-top-color: #2A3E4C; color: #C3CED6; }
+}
