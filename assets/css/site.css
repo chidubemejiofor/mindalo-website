@@ -132,7 +132,8 @@ a:hover { color: var(--ink); text-decoration-thickness: 3px; }
 .tool-btn[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
 .tool-btn .a1 { font-size: 0.8rem; } .tool-btn .a2 { font-size: 0.98rem; } .tool-btn .a3 { font-size: 1.18rem; }
 .tool-btn svg { width: 1.05em; height: 1.05em; flex: none; }
-.tools-right { margin-left: auto; display: flex; gap: 0.4rem; }
+.tools-right { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tools-group { flex-wrap: wrap; }
 
 /* ---------- Page furniture ---------- */
 main { display: block; padding-block: 2.5rem 4rem; }
@@ -309,15 +310,17 @@ main { display: block; padding-block: 2.5rem 4rem; }
   .site-nav { width: 100%; }
   .site-nav ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.3rem; }
   .site-nav a { min-height: 2.6rem; padding: 0 0.2rem; font-size: 0.82rem; background: var(--sand); line-height: 1.2; text-align: center; }
-  .nav-extra { display: none; }
+  .nav-full { display: none; }
+  .nav-short { display: inline; }
 
   /* Reading tools: one slim row */
   .tools { font-size: 0.72rem; }
-  .tools .wrap { flex-wrap: nowrap; gap: 0.5rem; padding-block: 0.3rem; }
+  .tools .wrap { flex-wrap: wrap; gap: 0.35rem 0.5rem; padding-block: 0.3rem; }
   .tool-btn { min-height: 2rem; min-width: 2rem; padding: 0 0.45rem; border-width: 1.5px; }
   .tool-btn .a1 { font-size: 0.72rem; } .tool-btn .a2 { font-size: 0.86rem; } .tool-btn .a3 { font-size: 1rem; }
   .tools-right { gap: 0.3rem; }
-  .tools .extra, #print-page { display: none; }
+  .tools-label { display: none; }
+  #print-page { display: none; }
 
   /* Hero: catchphrase straight after the brand, then the paragraph */
   .hero .eyebrow { display: none; }
@@ -399,3 +402,42 @@ body.is-reading { padding-bottom: 5.5rem; }
   .journey-layout .timeline { margin-top: 0.4rem; }
 }
 .journey-intro > h2 { margin-top: 0; }
+
+/* ---------- Languages ---------- */
+.nav-short { display: none; }
+html[lang="yo"], html[lang="ig"] { --font: "Noto Sans", "Atkinson Hyperlegible Next", Verdana, system-ui, sans-serif; }
+html[lang="am"] { --font: "Atkinson Hyperlegible Next", "Noto Sans Ethiopic", "Nyala", "Abyssinica SIL", system-ui, sans-serif; }
+html[lang="am"] .eyebrow, html[lang="am"] .tl-stage, html[lang="am"] .brand-tag { letter-spacing: 0.02em; }
+
+.lang-menu { position: relative; }
+.lang-code { display: none; }
+.lang-menu summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  min-height: 2.1rem; padding: 0 0.6rem;
+  border: 2px solid var(--line); border-radius: 8px; background: var(--cream);
+  font-weight: 700; color: var(--ink);
+}
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu summary::after { content: "▾"; font-size: 0.8em; }
+.lang-menu summary svg { width: 1.15em; height: 1.15em; flex: none; }
+.lang-menu summary:hover, .lang-menu[open] summary { border-color: var(--ink); }
+.lang-menu ul {
+  position: absolute; right: 0; top: calc(100% + 0.4rem); z-index: 40;
+  list-style: none; margin: 0; padding: 0.35rem; min-width: 12rem; max-width: none; font-size: 1.25em;
+  background: var(--cream); border: 2px solid var(--ink); border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(23, 44, 58, 0.18);
+}
+.lang-menu li { margin: 0; }
+.lang-menu a { display: block; padding: 0.55rem 0.8rem; border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 700; }
+.lang-menu a:hover { background: var(--sand); color: var(--ink); }
+.lang-menu a[aria-current] { background: var(--ink); color: var(--cream); }
+.translated-note { font-size: 0.8rem; color: var(--ink-soft); background: var(--sand); border-radius: 8px; padding: 0.5rem 0.8rem; margin: 0 0 1.4rem; max-width: none; }
+@media (max-width: 40rem) {
+  .nav-full { display: none; }
+  .nav-short { display: inline; }
+  .lang-menu summary { min-height: 2rem; padding: 0 0.45rem; border-width: 1.5px; }
+  .lang-current { display: none; }
+  .lang-code { display: inline; }
+}
+@media print { .lang-menu, .translated-note { display: none !important; } }
